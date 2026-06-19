@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center pt-5">
+    <div class="col-md-5">
+        <div class="card shadow border-0 rounded-3">
+            <div class="card-body p-4">
+                 <div class="text-center mb-4">
+                    <img src="{{ url_for('static', filename='uploads/logo.png') }}"
+                         alt="Logo"
+                         class="img-fluid"
+                         style="max-width: 120px;">
+                </div>
+                <h3 class="text-center mb-4">Login</h3>
+                <form method="POST">
+                    <div class="mb-3">
+                        <label>Email Address</label>
+                        <input type="email" name="email" class="form-control" required autocomplete="email">
+                    </div>
+                    <div class="mb-3">
+                        <label>Password</label>
+                        <input type="password" name="password" class="form-control" required autocomplete="current-password">
+                    </div>
+                    <button type="submit" class="btn btn-success w-100 py-2">Sign In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

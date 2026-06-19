@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SZABIST ZABTech iTv</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --gov-green: #005A2B;
+            --gov-gold: #FFD700;
+            --dark-blue: #0A2540;
+        }
+        body { background-color: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        /* Top Mini Header Bar */
+        .top-bar { background-color: var(--dark-blue); color: white; font-size: 0.85rem; padding: 6px 0; }
+        
+        /* Main White Header Row */
+        .header-main { background: white; padding: 15px 0; border-bottom: 4px solid var(--gov-green); }
+        .header-logo { max-height: 85px; width: auto; object-fit: contain; }
+        .institution-title { color: var(--gov-green); font-weight: 800; font-size: 1.8rem; margin: 0; text-transform: uppercase; }
+        .institution-sub { color: #555; font-size: 0.95rem; font-weight: 600; margin: 0; }
+
+        /* Navigation Bar */
+        .gov-navbar { background-color: var(--gov-green) !important; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .gov-navbar .nav-link { color: white !important; font-weight: 600; font-size: 1rem; padding: 10px 15px !important; transition: all 0.3s; }
+        .gov-navbar .nav-link:hover { background-color: rgba(255,255,255,0.15); color: var(--gov-gold) !important; }
+        
+        /* News Ticker */
+        .ticker-wrap { background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); overflow: hidden; padding: 8px 0; border-bottom: 1px solid #ddd; }
+        .ticker-title { background: #dc3545; color: white; padding: 4px 12px; font-weight: bold; border-radius: 3px; font-size: 0.9rem; }
+        
+        /* Footer */
+        .gov-footer { background: var(--dark-blue); color: #ccc; padding: 40px 0 20px; font-size: 0.9rem; margin-top: 50px; }
+        .gov-footer h5 { color: white; border-bottom: 2px solid var(--gov-green); padding-bottom: 10px; margin-bottom: 20px; }
+        .footer-bottom { background: #051424; padding: 15px 0; color: #888; font-size: 0.8rem; margin-top: 30px; }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <i class="fa-solid fa-phone me-2"></i> Call Us: Support Helpline | <i class="fa-solid fa-envelope ms-3 me-2"></i> info@zabtech.edu.pk
+            </div>
+            <div>
+                <a href="#" class="text-white me-3 text-decoration-none"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="text-white me-3 text-decoration-none"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="text-white text-decoration-none"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="header-main">
+        <div class="container d-flex align-items-center">
+            <img src="{{ url_for('static', filename='uploads/' + sys_settings.lms_logo) }}" class="header-logo me-3" onerror="this.src='https://via.placeholder.com/85'">
+            <div>
+                <h1 class="institution-title">SZABIT ZABTech iTv</h1>
+                <p class="institution-sub">Human Resource Research & Innovative Digital Learning Management Portal</p>
+            </div>
+        </div>
+    </div> -->
+<!-- <div class="header-main" style="background: #ffffff; padding: 12px 0; border-bottom: 5px solid #005A2B;">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-column flex-md-row">
+                
+                <div class="d-flex align-items-center mb-3 mb-md-0">
+                    <img src="https://www.bbshrrdb.gos.pk/assets/images/logo.png" 
+                         alt="Sindh Govt Logo" 
+                         class="header-logo me-3" 
+                         style="max-height: 90px; width: auto; object-fit: contain;">
+                    <div>
+                        <h1 class="institution-title" style="color: #005A2B; font-weight: 800; font-size: 1.7rem; margin: 0; line-height: 1.2;">
+                            SZABIT ZABTech iTv
+                        </h1>
+                        <p class="institution-sub" style="color: #444; font-size: 0.9rem; font-weight: 600; margin: 3px 0 0 0;">
+                            Human Resource Research & Innovative Digital Learning Management Portal
+                        </p>
+                        <span class="badge bg-success" style="font-size: 0.75rem; background-color: #005A2B !important;">Government of Sindh Initiative</span>
+                    </div>
+                </div>
+
+                <div class="d-none d-md-block text-end">
+                    <img src="https://www.bbshrrdb.gos.pk/assets/images/bb.png" 
+                         alt="Shaheed Mohtarma Benazir Bhutto" 
+                         style="max-height: 95px; width: auto; object-fit: contain; filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));">
+                </div>
+
+            </div>
+        </div>
+    </div> -->
+ <div class="header-main" style="background: #ffffff; padding: 12px 0; border-bottom: 5px solid #005A2B;">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-column flex-md-row">
+                
+                <div class="d-flex align-items-center mb-3 mb-md-0">
+                    <img src="../static/uploads/logo.png" 
+                         alt="Sindh Govt Logo" 
+                         class="header-logo me-3" 
+                         style="max-height: 90px; width: auto; object-fit: contain;">
+                    <div>
+                        <h1 class="institution-title" style="color: #005A2B; font-weight: 800; font-size: 1.7rem; margin: 0; line-height: 1.2;">
+                            SZABIST ZABTech iTv
+                        </h1>
+                        <p class="institution-sub" style="color: #444; font-size: 0.9rem; font-weight: 600; margin: 3px 0 0 0;">
+                            Human Resource Research & Innovative Digital Learning Management Portal
+                        </p>
+                        <span class="badge bg-success" style="font-size: 0.75rem; background-color: #005A2B !important;">Government of Sindh Initiative</span>
+                    </div>
+                </div>
+
+                <div class="d-none d-md-block text-end">
+                    <img src="../static/uploads/carousel-1.png" 
+                         alt="Shaheed Mohtarma Benazir Bhutto" 
+                         style="max-height: 95px; width: auto; object-fit: contain; filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark gov-navbar sticky-top">
+        <div class="container">
+            <button class="navbar-expand-lg navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#govNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="govNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="/"><i class="fa-solid fa-house me-1"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About Board</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/programs">Training Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/research">Research & Development</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
+                </ul>
+                <div class="d-flex gap-2">
+                    {% if current_user.is_authenticated %}
+                        {% if current_user.role == 'admin' %}<a href="{{ url_for('admin.dashboard') }}" class="btn btn-warning btn-sm fw-bold">Admin Panel</a>{% endif %}
+                        {% if current_user.role == 'instructor' %}<a href="{{ url_for('instructor.dashboard') }}" class="btn btn-warning btn-sm fw-bold">Instructor Panel</a>{% endif %}
+                        {% if current_user.role == 'staff' %}<a href="{{ url_for('staff.dashboard') }}" class="btn btn-warning btn-sm fw-bold">Staff Panel</a>{% endif %}
+                        {% if current_user.role == 'student' %}<a href="{{ url_for('student.dashboard') }}" class="btn btn-warning btn-sm fw-bold">My Courses</a>{% endif %}
+                        <a href="{{ url_for('auth.logout') }}" class="btn btn-outline-light btn-sm">Sign Out</a>
+                    {% else %}
+                        <a href="{{ url_for('auth.login') }}" class="btn btn-outline-light btn-sm fw-bold px-3"><i class="fa-solid fa-lock me-1"></i> Login Portal</a>
+                        <a href="{{ url_for('auth.register') }}" class="btn btn-light text-success btn-sm fw-bold px-3">Self Registration</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-3">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for cat, msg in messages %}
+                    <div class="alert alert-{{ cat }} alert-dismissible fade show" role="alert">
+                        {{ msg }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    {% block content %}{% endblock %}
+
+    <footer class="gov-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>SZABIT ZABTech iTv</h5>
+                    <p class="small text-muted" style="color: #aaa !important;">Empowering the youth with digital technical skill sets and structural development workflows across industrial ecosystems.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Quick Resource Links</h5>
+                    <ul class="list-unstyled text-muted small">
+                        <li><a href="#" class="text-white-50 text-decoration-none">» Online Verification System</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">» Strategic Career Placements</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">» Research & Publications</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Headquarters Contact</h5>
+                    <p class="small text-white-50">ZABTech IT Sector Command Headquarters,<br>Sindh, Pakistan.<br>Phone: (021) 111-222-333</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <div class="container">
+                © 2026 SZABIT ZABTech iTv. All Rights Reserved. Powered by IT Department MA TECH.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

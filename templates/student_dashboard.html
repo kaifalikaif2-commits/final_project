@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Student Academic Module Desktop</h2>
+<hr>
+<h4>Your Active Course Enrollments</h4>
+<div class="row mb-4">
+    {% for c in my_courses %}
+        <div class="col-md-6 mb-3">
+            <div class="card shadow-sm border-start border-primary border-4 p-3">
+                <h5>{{ c.title }}</h5>
+                <p class="small text-muted mb-2">Instructor: {{ c.instructor.name if c.instructor else 'Staff Admin Operations Group' }}</p>
+                
+                <h6>Lectures / Reference Framework Material:</h6>
+                <ul>
+                    {% for m in c.materials %}
+                        <li>{{ m.title }} {% if m.video_link %}<a href="{{ m.video_link }}" target="_blank" class="badge bg-info text-decoration-none">Launch Stream Resource</a>{% endif %}</li>
+                    {% empty %}
+                        <li class="text-muted small">No structural materials deployed.</li>
+                    {% endfor %}
+                </ul>
+
+                <h6>Active Evaluations Assignments:</h6>
+                {% for a in c.assignments %}
+                    <div class="border p-2 mb-2 rounded bg-light">
+                        <strong>{{ a.title }}</strong>: <span class="small">{{ a.description }}</span>
+                        <form action="{{ url_for('student.submit_assignment', assignment_id=a.id) }}" method="POST" enctype="multipart/form-data" class="mt-2 d-flex align-items-center gap-2">
+                            <input type="file" name="submission_file" class="form-control form-control-sm" required>
+                            <button type="submit" class="btn btn-sm btn-dark">Submit</button>
+                        </form>
+                    </div>
+                {% empty %}
+                    <p class="text-muted small">No assignments scheduled.</p>
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}
+        <div class="col-12"><p class="text-muted">You are not currently enrolled in any curriculum modules.</p></div>
+    {% endfor %}
+</div>
+
+<hr>
+
+<h4>Available Elective Course Matrix</h4>
+<div class="row">
+    {% for ac in available_courses %}
+        <div class="col-md-4 mb-3">
+            <div class="card p-3 shadow-sm">
+                <h6>{{ ac.title }}</h6>
+                <p class="small text-muted">{{ ac.category or "General" }}</p>
+                <a href="{{ url_for('student.enroll', course_id=ac.id) }}" class="btn btn-outline-primary btn-sm w-100">Request Allocation (Enroll)</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

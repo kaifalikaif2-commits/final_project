@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Coordinator Academic Dashboard</h2>
+
+{% if single_view %}
+    <div class="mb-3"><a href="{{ url_for('instructor.dashboard') }}" class="btn btn-secondary btn-sm">← Back to Course Directory</a></div>
+    <h3>Curating Framework: {{ course.title }}</h3>
+    <p class="text-muted">{{ course.description }}</p>
+
+    <div class="row mt-4">
+        <div class="col-md-6 mb-3">
+            <div class="card p-3 shadow-sm">
+                <h5>Publish Lecture Meta Material</h5>
+                <form method="POST">
+                    <input type="hidden" name="action" value="upload_material">
+                    <input type="text" name="title" class="form-control mb-2" placeholder="Material Topic Description" required>
+                    <input type="url" name="video_link" class="form-control mb-2" placeholder="External Webcast / Presentation Video Resource URL">
+                    <button type="submit" class="btn btn-primary btn-sm">Commit Reference</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <div class="card p-3 shadow-sm">
+                <h5>Initialize Academic Evaluation Task</h5>
+                <form method="POST">
+                    <input type="hidden" name="action" value="create_assignment">
+                    <input type="text" name="title" class="form-control mb-2" placeholder="Task Prompt Identifier" required>
+                    <textarea name="description" class="form-control mb-2" placeholder="Deliverable Criteria Blueprint Description" required></textarea>
+                    <button type="submit" class="btn btn-success btn-sm">Dispatch Assignment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <h5 class="mt-4">Your Assigned Specialized Curriculums</h5>
+    <div class="row">
+        {% for c in courses %}
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">{{ c.title }}</h5>
+                        <p class="card-text text-truncate">{{ c.description }}</p>
+                        <a href="{{ url_for('instructor.manage_course', course_id=c.id) }}" class="btn btn-sm btn-dark">Manage Environment</a>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <p class="text-muted">No course structures assigned to your system profile vector.</p>
+        {% endfor %}
+    </div>
+{% endif %}
+{% endblock %}

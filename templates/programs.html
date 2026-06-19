@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container my-5">
+    <div class="card border-0 shadow-sm p-5 bg-white" style="border-top: 4px solid #0A2540 !important;">
+        <h2 class="fw-bold text-primary mb-3"><i class="fa-solid fa-graduation-cap me-2"></i> Training Programs & Trades</h2>
+        <div style="width: 60px; height: 4px; background: #FFD700; class='mb-4'"></div>
+        <div class="text-dark mt-4" style="line-height: 1.8; text-align: justify; font-size: 1.05rem;">
+            {{ content | safe }}
+        </div>
+    </div>
+</div>
+{% endblock %}

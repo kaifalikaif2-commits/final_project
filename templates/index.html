@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="ticker-wrap mb-4" style="background: #ffffff; border-bottom: 2px solid #ddd; box-shadow: 0 2px 5px rgba(0,0,0,0.05); padding: 6px 0;">
+    <div class="container d-flex align-items-center">
+        <span class="ticker-title me-3 text-nowrap" style="background: #dc3545; color: white; padding: 5px 15px; font-weight: bold; font-size: 0.85rem; border-radius: 4px; animation: pulse 2s infinite;"><i class="fa-solid fa-bell me-1"></i> IMPORTANT ANNOUNCEMENT:</span>
+        <marquee class="fw-bold text-dark" scrollamount="4" onmouseover="this.stop();" onmouseout="this.start();" style="font-size: 0.9rem;">
+            🌟 Registration for Phase-XV Training Programs is currently active. Apply before the deadline. | Biometric Attendance mapping verification is mandatory for all enrolled trainees across centers. | Welcome to SZABIT ZABTech iTv Management Network.
+        </marquee>
+    </div>
+</div>
+
+<div class="container mb-5">
+    <div id="portalHeroCarousel" class="carousel slide shadow-lg rounded-3 overflow-hidden border" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#portalHeroCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#portalHeroCarousel" data-bs-slide-to="1"></button>
+        </div>
+        <div class="carousel-inner" style="max-height: 440px;">
+            <div class="carousel-item active">
+                <img src="../static/uploads/19bmeeting.jpg" class="d-block w-100" alt="BBSHRRDB Training" style="filter: brightness(0.75); object-fit: cover; height: 440px;">
+                <div class="carousel-caption d-none d-md-block text-start p-4 low-bg" style="background: rgba(0, 90, 43, 0.85); border-left: 5px solid #FFD700; left: 8%; bottom: 15%; max-width: 550px; border-radius: 4px;">
+                    <h3 class="fw-bold text-white">Youth Employment & Skill Training</h3>
+                    <p class="small text-white-50">Providing high-quality institutional blueprints to transform youth into highly productive human resources for global economic sectors.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../static/uploads/depdmou.jpg" class="d-block w-100" alt="Tech Infrastructure" style="filter: brightness(0.75); object-fit: cover; height: 440px;">
+                <div class="carousel-caption d-none d-md-block text-start p-4 low-bg" style="background: rgba(10, 37, 64, 0.9); border-left: 5px solid #FFD700; left: 8%; bottom: 15%; max-width: 550px; border-radius: 4px;">
+                    <h3 class="fw-bold text-white">Advanced IT Skillsets Mapping</h3>
+                    <p class="small text-white-50">Equipping professional institutes with state-of-the-art frameworks to track, review, and certify technical human labor.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#portalHeroCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+        <button class="carousel-control-next" type="button" data-bs-target="#portalHeroCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+    </div>
+</div>
+
+<div class="container mb-5">
+    <div class="row g-4 align-items-stretch">
+        <div class="col-lg-8">
+            <div class="p-4 bg-white rounded shadow-sm h-100 border-start border-success border-4">
+                <h3 class="fw-bold text-success mb-2">Benazir Bhutto Shaheed Human Resource Research & Development Board</h3>
+                <h5 class="text-muted mb-3" style="font-size: 1.1rem; font-weight: 600;">Government of Sindh Initative for Human Capital Optimization</h5>
+                <p class="text-dark" style="line-height: 1.7; text-align: justify; font-size: 0.95rem;">
+                    The Board was established through an act of parliament to address the critical challenge of unemployment among youth in Sindh. By introducing structured vocational frameworks, technical methodologies, and scientific research methodologies, the board bridges the gap between raw talent and competitive institutional marketplaces.
+                </p>
+                <p class="text-dark" style="line-height: 1.7; text-align: justify; font-size: 0.95rem;">
+                    Through this automated Learning Management System (LMS) cluster, students can easily access assigned curriculum vectors, stream live instructional webcasts, track individual project workflows, and submit deliverables securely to designated evaluators.
+                </p>
+                <div class="mt-4">
+                    <a href="{{ url_for('auth.register') }}" class="btn btn-success px-4 py-2 fw-bold text-white me-2" style="background: #005A2B;"><i class="fa-solid fa-user-plus me-1"></i> Apply Online for Phase-XV</a>
+                    <a href="#" class="btn btn-outline-secondary px-4 py-2 fw-bold">Read Detailed Reports</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4">
+            <div class="p-4 bg-dark text-white rounded shadow-sm h-100 d-flex flex-column" style="background-color: #0A2540 !important;">
+                <h4 class="fw-bold mb-3 text-warning border-bottom border-secondary pb-2"><i class="fa-solid fa-shield-halved me-2"></i> Secure Portals</h4>
+                <p class="small text-white-50">Select your functional department target vector to authenticate session state tokens:</p>
+                
+                <div class="d-grid gap-2 mt-2">
+                    <a href="{{ url_for('auth.login') }}" class="btn btn-outline-light text-start py-2 px-3 fw-bold"><i class="fa-solid fa-user-shield text-warning me-2"></i> Administrative Login</a>
+                    <a href="{{ url_for('auth.login') }}" class="btn btn-outline-light text-start py-2 px-3 fw-bold"><i class="fa-solid fa-chalkboard-user text-info me-2"></i> Faculty Coordinator Portal</a>
+                    <a href="{{ url_for('auth.login') }}" class="btn btn-outline-light text-start py-2 px-3 fw-bold"><i class="fa-solid fa-user-gear text-success me-2"></i> Operations Staff Workspace</a>
+                    <a href="{{ url_for('auth.login') }}" class="btn btn-warning text-dark text-start py-2 px-3 fw-bold mt-2"><i class="fa-solid fa-graduation-cap me-2"></i> Student Desktop Console</a>
+                </div>
+                
+                <div class="mt-auto pt-3 border-top border-secondary text-center">
+                    <span class="small text-white-50"><i class="fa-solid fa-headset me-1"></i> Emergency Technical Desk: <strong>111-222-333</strong></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="w-100 py-5 my-5 text-white shadow-inner" style="background: linear-gradient(135deg, #005A2B 0%, #034221 100%);">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-6 col-md-3">
+                <div class="p-2">
+                    <div class="mb-2"><i class="fa-solid fa-users fa-3x text-warning"></i></div>
+                    <h2 class="fw-extrabold display-6">350,000+</h2>
+                    <p class="small text-white-50 uppercase fw-bold tracking-wider m-0">Trained Youth Candidates</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="p-2">
+                    <div class="mb-2"><i class="fa-solid fa-building-columns fa-3x text-warning"></i></div>
+                    <h2 class="fw-extrabold display-6">85+</h2>
+                    <p class="small text-white-50 uppercase fw-bold tracking-wider m-0">Affiliated Technical Centers</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="p-2">
+                    <div class="mb-2"><i class="fa-solid fa-book-bookmark fa-3x text-warning"></i></div>
+                    <h2 class="fw-extrabold display-6">45+</h2>
+                    <p class="small text-white-50 uppercase fw-bold tracking-wider m-0">Specialized Curriculums</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="p-2">
+                    <div class="mb-2"><i class="fa-solid fa-handshake fa-3x text-warning"></i></div>
+                    <h2 class="fw-extrabold display-6">78%</h2>
+                    <p class="small text-white-50 uppercase fw-bold tracking-wider m-0">Industrial Placement Ratio</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold text-success">Institutional Operational Modalities</h2>
+        <p class="text-muted small">Managed pipelines optimized for real-time monitoring and technical training deployment</p>
+        <div style="width: 70px; height: 4px; background: #FFD700; margin: 10px auto 0;"></div>
+    </div>
+    
+    <div class="row g-4 text-center">
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm p-4 bg-white" style="border-top: 4px solid #005A2B !important;">
+                <div class="text-success mb-3"><i class="fa-solid fa-fingerprint fa-3x"></i></div>
+                <h5 class="fw-bold text-dark">Biometric Tracking</h5>
+                <p class="text-muted small">Real-time attendance logs tracking and secure verification nodes for institutional compliance metrics.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm p-4 bg-white" style="border-top: 4px solid #FFD700 !important;">
+                <div class="text-warning mb-3"><i class="fa-solid fa-microchip fa-3x"></i></div>
+                <h5 class="fw-bold text-dark">High-Tech Trades</h5>
+                <p class="text-muted small">Curriculums mapped cleanly for Artificial Intelligence, Digital Architecture, and Full-Stack Engineering.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm p-4 bg-white" style="border-top: 4px solid #0A2540 !important;">
+                <div class="text-primary mb-3"><i class="fa-solid fa-stamp fa-3x"></i></div>
+                <h5 class="fw-bold text-dark">Online Verification</h5>
+                <p class="text-muted small">Automated credential checks allowing corporate third parties to instantaneously cross-check graduate certificates.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

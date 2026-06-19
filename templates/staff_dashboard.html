@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Operations Staff Management Console</h2>
+<hr>
+<div class="row">
+    <div class="col-md-5 mb-4">
+        <div class="card p-3 shadow-sm">
+            <h5>Registered Students Registry Matrix</h5>
+            <ul class="list-group list-group-flush">
+                {% for s in students %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{ s.name }}
+                        <span class="badge {{ 'bg-success' if s.is_approved else 'bg-warning' }}">{{ 'Active' if s.is_approved else 'Pending' }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md-7 mb-4">
+        <div class="card p-3 shadow-sm">
+            <h5>Assist Course Management (Upload Supplemental Reference Framework)</h5>
+            <table class="table table-sm text-center">
+                <thead><tr><th>Course</th><th>Actions</th></tr></thead>
+                <tbody>
+                    {% for crs in courses %}
+                    <tr>
+                        <td class="text-start">{{ crs.title }}</td>
+                        <td>
+                            <form action="{{ url_for('staff.staff_add_material', course_id=crs.id) }}" method="POST" class="d-flex gap-1">
+                                <input type="text" name="title" placeholder="Context Title" class="form-control form-control-sm" required>
+                                <input type="url" name="video_link" placeholder="Video Link" class="form-control form-control-sm">
+                                <button type="submit" class="btn btn-xs btn-outline-primary py-0 px-2">Upload</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
