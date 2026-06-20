@@ -10,7 +10,8 @@
 		"ghcr.io/devcontainers/features/python:1": {},
 		"ghcr.io/stu-bell/devcontainer-features/python:0": {},
 		"ghcr.io/itsalljustdata/devcontainers-custom-features/python-virtualenv:1": {}
-	}
+	},
+	"postCreateCommand": "python -m pip install flask"
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
