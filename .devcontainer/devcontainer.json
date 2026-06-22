@@ -2,7 +2,7 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/anaconda
 {
 	"name": "Anaconda (Python 3)",
-	"build": { 
+	"build": {
 		"context": "..",
 		"dockerfile": "Dockerfile"
 	},
@@ -11,7 +11,16 @@
 		"ghcr.io/stu-bell/devcontainer-features/python:0": {},
 		"ghcr.io/itsalljustdata/devcontainers-custom-features/python-virtualenv:1": {}
 	},
-	"postCreateCommand": "python -m pip install flask"
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance"
+			]
+		}
+	},
+	"forwardPorts": [5000],
+	"postCreateCommand": "python -m pip install flask flask-sqlalchemy flask-login"
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
