@@ -1,4 +1,23 @@
 {
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Flask",
+            "type": "shell",
+            "command": "flask --app app run --host 0.0.0.0",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
+{
 	"version": "2.0.0",
 	"tasks": [
 		{

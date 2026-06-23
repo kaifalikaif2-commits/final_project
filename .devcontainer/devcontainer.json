@@ -20,7 +20,8 @@
 		}
 	},
 	"forwardPorts": [5000],
-	"postCreateCommand": "python -m pip install flask flask-sqlalchemy flask-login"
+	"postCreateCommand": "python -m pip install -r requirements.txt",
+	"postStartCommand": "echo 'Use the VS Code task \"Run Flask\" or run: flask --app app run --host 0.0.0.0'"
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
